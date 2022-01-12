@@ -1,0 +1,24 @@
+// ng zorro default style
+@import "~ng-zorro-antd/ng-zorro-antd.min.css";
+
+// bootstrap css using utilities
+@import "assets/css/bootstrap.min.css";
+
+// color palette
+@import "assets/color/palette";
+
+// text font
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+// global styles
+body {
+  font-family: 'Lato', sans-serif;
+}
+
+.btn-primary {
+  color: #fff;
+  border-color: $primary;
+  background: $primary;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
