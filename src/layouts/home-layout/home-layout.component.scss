@@ -1,0 +1,11 @@
+@import "./src/assets/color/palette";
+.homeLayout {
+  .main {
+    margin: 1rem;
+    background-color: $light;
+    border-radius: 1rem;
+    min-height: calc(100% - 32px) !important;
+
+  }
+}
+

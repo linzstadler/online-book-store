@@ -1,0 +1,22 @@
+<div class = "header text-right">
+    <ul>
+
+        <li>
+            <a href = "javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+        </li>
+        <li>
+            <a href = "javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+        </li>
+        <li>
+            <a nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click" >
+                Hover me
+                <i nz-icon nzType="down"></i>
+            </a>
+            <nz-dropdown-menu #menu="nzDropdownMenu">
+                <ul nz-menu nzSelectable>
+                    <li nz-menu-item nzDanger>Logout</li>
+                </ul>
+            </nz-dropdown-menu>
+        </li>
+    </ul>
+</div>
