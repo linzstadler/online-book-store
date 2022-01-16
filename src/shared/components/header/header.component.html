@@ -1,22 +1,39 @@
-<div class = "header text-right">
+<div class="header text-right">
     <ul>
 
         <li>
-            <a href = "javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+            <nz-badge [nzCount]="5" [nzOverflowCount]="99">
+                <a href="javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+            </nz-badge>
         </li>
         <li>
-            <a href = "javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+            <nz-badge [nzCount]="5" [nzOverflowCount]="99">
+                <a href="javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+            </nz-badge>
+
         </li>
-        <li>
-            <a nz-dropdown [nzDropdownMenu]="menu" nzTrigger="click" >
-                Hover me
-                <i nz-icon nzType="down"></i>
+        <li class="mr-0">
+            <a href="javascript:;" class="d-inline-block"
+               nz-popover
+               nzPopoverPlacement="bottomRight"
+               nzPopoverTitle=""
+               [(nzPopoverVisible)]="visible"
+               (nzPopoverVisibleChange)="change($event)"
+               nzPopoverTrigger="click"
+               [nzPopoverOverlayClassName]="'avatarContentTemplate'"
+               [nzPopoverContent]="contentTemplate">
+                <img src="https://az360.school/public/files/users/full/b52e290c_free-profile-photo-whatsapp-4.png"
+                     class="avatar"/>
             </a>
-            <nz-dropdown-menu #menu="nzDropdownMenu">
-                <ul nz-menu nzSelectable>
-                    <li nz-menu-item nzDanger>Logout</li>
-                </ul>
-            </nz-dropdown-menu>
+
+            <ng-template #contentTemplate>
+                <p>
+                    Linz Stadler
+                </p>
+                <hr/>
+                <a href="javascript:;">Logout</a>
+            </ng-template>
+
         </li>
     </ul>
 </div>

@@ -1,21 +1,24 @@
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
-<p>home works!</p>
+<main class="mt-5">
+    <div *ngIf="products | async as data; else loadingOrError">
+        <nz-list nzGrid>
+            <div nz-row [nzGutter]="[32, 16]">
+                <div nz-col [nzXXl]="8" [nzXl]="8" [nzLg]="10" [nzMd]="10" [nzSm]="12" [nzXs]="24"
+                     *ngFor="let item of data.items">
+                    <nz-list-item>
+                        <app-product [data] = "item"></app-product>
+
+                    </nz-list-item>
+                </div>
+            </div>
+        </nz-list>
+    </div>
+    <ng-template #loadingOrError>
+        <ng-container *ngIf="error; else loading"> {{ error }} </ng-container>
+        <ng-template #loading>
+            <app-loading-container></app-loading-container>
+        </ng-template>
+    </ng-template>
+
+
+</main>
+<!-- - {{ error.statusText }}-->

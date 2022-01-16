@@ -27,10 +27,13 @@ body {
 
 // set bg color when home layout is active
 .homeBody {
-  background-color: $primary-light;
+  background-color: $primary;
 }
 
 // set bg color when authentication layout is active
 .authBody {
-  background-color: $primary-light;
+  background-color: $primary-100;
+}
+.avatarContentTemplate {
+  width: 200px;
 }

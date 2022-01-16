@@ -1,11 +1,22 @@
 @import "./src/assets/color/palette";
+
 .homeLayout {
   .main {
     margin: 1rem;
-    background-color: $light;
-    border-radius: 1rem;
+    background-color: #faf9fe;
+    border-radius: 2rem;
     min-height: calc(100% - 32px) !important;
 
+  }
+
+  .customStaticRow {
+    & > div:first-child {
+      width: 230px;
+    }
+
+    & > div:last-child {
+      width: calc(100% - 230px);
+    }
   }
 }
 

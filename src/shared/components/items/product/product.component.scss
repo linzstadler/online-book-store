@@ -1,0 +1,23 @@
+@import "src/assets/color/palette";
+
+.product {
+  box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+  border-radius: 1rem;
+  background-color: $light;
+  h5 {
+    text-overflow: ellipsis;
+  }
+  img {
+
+    border-radius: 1rem;
+  }
+  .customStaticRow {
+    & > div:first-child {
+      width: 112px;
+    }
+
+    & > div:last-child {
+      width: calc(100% - 112px);
+    }
+  }
+}

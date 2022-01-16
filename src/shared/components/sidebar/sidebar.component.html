@@ -1,7 +1,8 @@
 <div class = "sidebar">
-    <a [routerLink]="['/home']" class="logo d-inline-block"><img src = "./assets/media/images/book-store-logo.png" class="w-100"/></a>
-    <div>
-        <h4>Category</h4>
-        <h5>asd</h5>
+    <a [routerLink]="['/home']" class="logo d-inline-block mt-4"><img src = "./assets/media/images/book-store-logo.png" class="w-100"/></a>
+    <div class="categoryArea mt-5">
+        <h5 class = "font-weight-bold mb-3">Category</h5>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Engineering'}" class="active">Engineering</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Poetry'}">Poetry</a>
     </div>
 </div>

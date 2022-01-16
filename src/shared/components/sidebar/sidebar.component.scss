@@ -1,4 +1,4 @@
-
+@import './src/assets/color/palette';
 .sidebar {
   padding: 1rem 3rem;
   position: fixed;
@@ -6,5 +6,30 @@
   left: 0;
   .logo {
     max-width: 150px;
+  }
+  .categoryArea {
+    h5 {
+      color: $light;
+    }
+    a {
+      display: block;
+      color: rgba($light, 0.7);
+      position: relative;
+
+      padding: .5rem 0 .5rem 1rem;
+      &.active {
+        color: $light;
+        &:before {
+          content: '';
+          position: absolute;
+          left: 0;
+          top: .9rem;
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background-color: $light;
+        }
+      }
+    }
   }
 }

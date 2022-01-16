@@ -1,0 +1,20 @@
+<div class="product p-4">
+    <div class="d-flex customStaticRow">
+        <div><img
+                src="https://books.google.com/books/content?id=Ac4svQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                class="w-100"/></div>
+        <div>
+            <div class="px-3">
+                <h5 class="overflow-hidden text-nowrap" nz-popover nzPopoverTitle="" [nzPopoverContent]="data.volumeInfo.title">{{data.volumeInfo.title}}</h5>
+                <p>Author</p>
+                <div>Type</div>
+                <button nz-button>Add to card</button>
+                <button nz-button>Add to wishlist</button>
+
+                <div>
+                    Not for sale
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
