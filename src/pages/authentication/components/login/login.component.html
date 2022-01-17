@@ -1,29 +1,23 @@
-<form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
-    <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your username!">
-            <nz-input-group nzPrefixIcon="user">
-                <input type="text" nz-input formControlName="userName" placeholder="Username" />
-            </nz-input-group>
-        </nz-form-control>
-    </nz-form-item>
-    <nz-form-item>
-        <nz-form-control nzErrorTip="Please input your Password!">
-            <nz-input-group nzPrefixIcon="lock">
-                <input type="password" nz-input formControlName="password" placeholder="Password" />
-            </nz-input-group>
-        </nz-form-control>
-    </nz-form-item>
-    <div nz-row class="login-form-margin">
-        <div nz-col [nzSpan]="12">
-            <label nz-checkbox formControlName="remember">
-                <span>Remember me</span>
-            </label>
-        </div>
-        <div nz-col [nzSpan]="12">
-            <a class="login-form-forgot">Forgot password</a>
-        </div>
-    </div>
-    <button nz-button class="login-form-button login-form-margin" [nzType]="'primary'">Log in</button>
-    Or
-    <a>register now!</a>
-</form>
+<div class = "login">
+    <h3 class = "mb-4">Login</h3>
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                <input nz-input formControlName="email" id="email" placeholder="E-mail" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+        <nz-form-item>
+
+            <nz-form-control nzErrorTip="Please input your Password!">
+                <input type="password" nz-input formControlName="password" id = "password" placeholder="Password" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <button nz-button class="px-4 btn-primary ">Log in</button>
+        Or
+        <a [routerLink]="['/auth/register']">register now!</a>
+    </form>
+
+</div>

@@ -1,1 +1,35 @@
-<p>register works!</p>
+<div class = "register">
+    <h3 class = "mb-4">Register</h3>
+    <form nz-form [formGroup]="validateForm" class="login-form" (ngSubmit)="submitForm()">
+        <nz-form-label nzRequired nzFor="first_name">First name</nz-form-label>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="The input is not valid first name!">
+                <input nz-input formControlName="first_name" id="first_name" placeholder="First name" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-label nzRequired nzFor="last_name">Last name</nz-form-label>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="The input is not valid Last name!">
+                <input nz-input formControlName="last_name" id="last_name" placeholder="Last name" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-label nzRequired nzFor="email">E-mail</nz-form-label>
+        <nz-form-item>
+            <nz-form-control nzErrorTip="The input is not valid E-mail!">
+                <input nz-input formControlName="email" id="email" placeholder="E-mail" />
+            </nz-form-control>
+        </nz-form-item>
+        <nz-form-label nzRequired nzFor="password">Password</nz-form-label>
+        <nz-form-item>
+
+            <nz-form-control nzErrorTip="Please input your Password!">
+                <input type="password" nz-input formControlName="password" id = "password" placeholder="Password" />
+            </nz-form-control>
+        </nz-form-item>
+
+        <button nz-button class="px-4 btn-primary ">Register</button>
+        Or
+        <a [routerLink]="['/auth/login']">Login</a>
+    </form>
+
+</div>
