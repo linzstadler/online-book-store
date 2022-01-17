@@ -4,7 +4,7 @@
   box-shadow: 0 5px 20px rgba(0,0,0,0.1);
   border-radius: 1rem;
   background-color: $light;
-  h5 {
+  h5, p {
     text-overflow: ellipsis;
   }
   img {
@@ -19,5 +19,19 @@
     & > div:last-child {
       width: calc(100% - 112px);
     }
+  }
+  .type {
+
+    padding: .2rem .8rem;
+    background-color: $primary-100;
+    border-radius: 1rem;
+    width: fit-content;
+    width: -moz-fit-content;
+
+
+  }
+  .icons {
+    margin-top: -5px;
+    font-size: 1rem;
   }
 }

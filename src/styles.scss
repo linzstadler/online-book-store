@@ -16,14 +16,22 @@ body {
   line-height: 1.15;
 }
 
+// primary buttons
 .btn-primary {
-  color: #fff;
+  color: $light;
   border-color: $primary;
   background: $primary;
-  text-shadow: 0 -1px 0 rgba(0,0,0,.12);
+  border-radius: 1rem;
   box-shadow: 0 2px 0 rgba(0,0,0,.045);
 }
 
+.btn-primary-outline {
+  color: $primary;
+  border-color: $primary;
+  background: transparent;
+  border-radius: 1rem;
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
 
 // set bg color when home layout is active
 .homeBody {

@@ -1,18 +1,29 @@
 <div class="product p-4">
     <div class="d-flex customStaticRow">
         <div><img
-                src="https://books.google.com/books/content?id=Ac4svQEACAAJ&printsec=frontcover&img=1&zoom=1&source=gbs_api"
+                [src]="data.volumeInfo.imageLinks.smallThumbnail"
                 class="w-100"/></div>
         <div>
             <div class="px-3">
                 <h5 class="overflow-hidden text-nowrap" nz-popover nzPopoverTitle="" [nzPopoverContent]="data.volumeInfo.title">{{data.volumeInfo.title}}</h5>
-                <p>Author</p>
-                <div>Type</div>
-                <button nz-button>Add to card</button>
-                <button nz-button>Add to wishlist</button>
+                <p class="overflow-hidden text-nowrap">{{data.volumeInfo.authors}}</p>
+                <div class = "mb-3">
+                    <div class="type" *ngIf = "data.volumeInfo.categories">
+                        {{data.volumeInfo.categories}}
+                    </div>
+                </div>
 
-                <div>
-                    Not for sale
+                <div [ngSwitch]="data.saleInfo.saleability">
+                    <div *ngSwitchCase="getProductEnum().NOT_FOR_SALE">Not For Sale</div>
+                    <div *ngSwitchCase="getProductEnum().FREE">Free</div>
+                    <div *ngSwitchCase="getProductEnum().FOR_SALE">
+                        <h5>
+                            <i nz-icon nzType="dollar" class="d-inline-block align-middle icons" nzTheme="outline"></i> {{data.saleInfo.retailPrice.amount}} {{data.saleInfo.retailPrice.currencyCode}}
+                        </h5>
+
+                        <button nz-button class = "btn-primary-outline">Add to wish list <i nz-icon nzType="plus" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
+                        <button nz-button class = "btn-primary ml-3">Add to card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
+                    </div>
                 </div>
             </div>
         </div>
