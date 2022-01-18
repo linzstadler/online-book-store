@@ -27,7 +27,7 @@
             </nz-form-control>
         </nz-form-item>
 
-        <button nz-button class="px-4 btn-primary ">Register</button>
+        <button nz-button class="px-4 btn-primary " [nzLoading]="isLoading">Register</button>
         Or
         <a [routerLink]="['/auth/login']">Login</a>
     </form>

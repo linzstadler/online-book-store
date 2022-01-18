@@ -1,0 +1,41 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "first_name": "Aoife",
+      "last_name": "Kramer",
+      "avatar": "",
+      "email": "demo@gmail.com",
+      "password": "123456"
+    },
+    {
+      "id": 2,
+      "first_name": "Eva",
+      "last_name": "Krueger",
+      "avatar": "",
+      "email": "eva@gmail.com",
+      "password": "123456"
+    },
+    {
+      "first_name": "asdasd",
+      "last_name": "dsfsdfsd",
+      "email": "demaaao@gmail.com",
+      "password": "123456",
+      "id": 3
+    },
+    {
+      "first_name": "sasda",
+      "last_name": "dfsdfs",
+      "email": "asda@sad.com",
+      "password": "dsadasd",
+      "id": 4
+    },
+    {
+      "first_name": "asdasda",
+      "last_name": "sdfsdfs",
+      "email": "adasa@dasd.com",
+      "password": "asdasdasd",
+      "id": 5
+    }
+  ]
+}

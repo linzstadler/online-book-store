@@ -10,7 +10,11 @@ import {NzInputModule} from "ng-zorro-antd/input";
 import {NzCheckboxModule} from "ng-zorro-antd/checkbox";
 import {NzButtonModule} from "ng-zorro-antd/button";
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
-
+import {NzMessageModule} from 'ng-zorro-antd/message';
+import {StoreModule} from "@ngrx/store";
+import {LoginReducer} from "./components/login/reducers/login.reducer";
+import {EffectsModule} from "@ngrx/effects";
+import {LoginEffect} from "./components/login/effects/login.effect";
 @NgModule({
     declarations: [
         AuthenticationComponent,
@@ -26,8 +30,12 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms'
         NzCheckboxModule,
         NzButtonModule,
         FormsModule,
-        ReactiveFormsModule
-    ]
+        ReactiveFormsModule,
+        NzMessageModule,
+        StoreModule.forFeature('user', LoginReducer),
+        EffectsModule.forFeature([LoginEffect]),
+    ],
+    providers: [LoginEffect]
 })
 export class AuthenticationModule {
 }

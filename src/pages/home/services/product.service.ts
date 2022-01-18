@@ -16,7 +16,7 @@ export class ProductService {
     getProducts(category: string): Observable<TotalProductsModel> {
         let params = new HttpParams();
         params = params.set('q', `subject: ${category}`);
-        params = params.set('maxResults', 20);
+        params = params.set('maxResults', 30);
         return this.http.get<TotalProductsModel>(`${this.endpoint}`, {params});
     }
 }
