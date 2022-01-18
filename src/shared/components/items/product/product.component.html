@@ -22,7 +22,8 @@
                         </h5>
 
                         <button nz-button class = "btn-primary-outline">Add to wish list <i nz-icon nzType="plus" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
-                        <button nz-button class = "btn-primary ml-3">Add to card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
+                        <button nz-button class = "btn-primary ml-3" *ngIf="!isAddedInBucket" (click)="addProductToBucket()">Add to card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
+                        <button nz-button class = "btn-primary ml-3" *ngIf="isAddedInBucket" (click)="addProductToBucket()">Remove from card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
                     </div>
                 </div>
             </div>

@@ -7,7 +7,6 @@ import {NzListModule} from "ng-zorro-antd/list";
 import {NzGridModule} from "ng-zorro-antd/grid";
 import {LoadingContainerModule} from "../../shared/components/loading-container/loading-container.module";
 
-
 @NgModule({
     declarations: [
         HomeComponent
@@ -18,7 +17,7 @@ import {LoadingContainerModule} from "../../shared/components/loading-container/
         ProductModule,
         NzListModule,
         NzGridModule,
-        LoadingContainerModule
+        LoadingContainerModule,
     ]
 })
 export class HomeModule {

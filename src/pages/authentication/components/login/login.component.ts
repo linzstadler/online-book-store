@@ -35,9 +35,10 @@ export class LoginComponent implements OnInit {
             email: [null, [Validators.email, Validators.required]],
             password: [null, [Validators.required]],
         });
-        this.store$.select('user').subscribe(data => {
+        const userSubscription = this.store$.select('user').subscribe(data => {
             this.isLoading = data.isLoading
         });
+        this.subs.add(userSubscription);
 
     }
 
@@ -47,20 +48,6 @@ export class LoginComponent implements OnInit {
                 email: this.validateForm.get('email')?.value, password: this.validateForm.get('password')?.value
             }));
 
-
-
-            // this.isLoading = true;
-            //
-            // const loginSubscription = this.authService.login(this.validateForm.getRawValue()).subscribe(res => {
-            //     this.isLoading = false;
-            //     if(res.length > 0) {
-            //         this.router.navigateByUrl('/home');
-            //     } else {
-            //         this.message.error('User not found...');
-            //     }
-            //
-            // })
-            // this.subs.add(loginSubscription);
         } else {
             Object.values(this.validateForm.controls).forEach(control => {
                 if (control.invalid) {

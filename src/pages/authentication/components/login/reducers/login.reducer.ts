@@ -14,14 +14,14 @@ const reducer = createReducer(
   on(LoginActions.SuccessLoginAction, (state: LoginState, {payload}) => {
     return {...state, UserData: payload, isLoading: false};
   }),
-  on(LoginActions.FailedLoginAction, (state: LoginState) => {
-    return {...state, isLoading: false};
+  on(LoginActions.FailedLoginAction, (state: LoginState, error: Error) => {
+    return {...state, isLoading: false, error: error};
   }),
 );
 
 export function LoginReducer(
   state: LoginState | undefined,
   action: Action
-): { isLoading: boolean; UserData: (UserModel | UserModel[])[] } {
+): { isLoading: boolean; UserData: UserModel } {
   return reducer(state, action);
 }

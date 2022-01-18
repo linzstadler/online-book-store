@@ -14,7 +14,7 @@ export const BeginLoginAction = createAction(
 );
 export const SuccessLoginAction = createAction(
     ActionTypes.SUCCESS_LOGIN,
-    props<{ payload: UserModel[] }>()
+    props<{ payload: UserModel }>()
 );
 export const FailedLoginAction = createAction(
     ActionTypes.FAILED_LOGIN,

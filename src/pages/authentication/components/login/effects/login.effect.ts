@@ -20,7 +20,7 @@ export class LoginEffect {
           switchMap(
               (payload) => this.authService.login(payload.email, payload.password).pipe(
                   map((data: UserModel[]) => {
-                      return LoginAction.SuccessLoginAction({payload: data});
+                      return LoginAction.SuccessLoginAction({payload: data[0]});
                   }),
                   catchError((error: Error) => {
                       return of(LoginAction.FailedLoginAction(error));

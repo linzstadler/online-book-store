@@ -1,7 +1,7 @@
 export interface UserModel {
-    id: number;
-    first_name: string;
-    last_name: string;
-    avatar: string;
-    email: string;
+    id: number | null;
+    first_name: string | null;
+    last_name: string | null;
+    avatar: string | null;
+    email: string | null;
 }

@@ -1,5 +1,4 @@
 export interface ProductModel {
-
     id: string;
     volumeInfo: {
         title: string;
