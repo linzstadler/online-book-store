@@ -1,1 +1,54 @@
-<p>bucket works!</p>
+<div>
+    <a href="javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Engineering'}"><i nz-icon
+                                                                                                 nzType="arrow-left"
+                                                                                                 nzTheme="outline"></i></a>
+    <div class="mt-5">
+        <h3 class="font-weight-bold">- Bucket list</h3>
+    </div>
+    <div class="mt-5" *ngIf="bucketList$ | async as data">
+        <div *ngIf = "data.BucketList.length === 0; else showData" class = "text-center">
+            Bucket is <span class="font-weight-bold">Empty</span> <i nz-icon nzType="meh" class = "ml-2 icon" nzTheme="outline"></i>
+        </div>
+        <ng-template #showData>
+            <div *ngFor="let item of data.BucketList">
+                <div nz-row>
+                    <div nz-col nzXs="2" nzSm="2" nzMd="2" nzLg="2" nzXl="2">
+                        <img [src]="item.volumeInfo.imageLinks.smallThumbnail"/>
+                    </div>
+                    <div nz-col nzXs="19" nzSm="19" nzMd="19" nzLg="19" nzXl="19">
+                        <div class="ml-3">
+                            <h4>{{item.volumeInfo.title}}</h4>
+                            <p class="overflow-hidden text-nowrap">{{item.volumeInfo.authors}}</p>
+                            <div class="mb-3">
+                                <div class="type" *ngIf="item.volumeInfo.categories">
+                                    {{item.volumeInfo.categories}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div nz-col nzXs="2" nzSm="2" nzMd="2" nzLg="2" nzXl="2">
+                        <span class = "font-weight-bold">{{item.saleInfo.retailPrice.amount}} {{item.saleInfo.retailPrice.currencyCode}}</span>
+                    </div>
+                    <div nz-col nzXs="1" nzSm="1" nzMd="1" nzLg="1" nzXl="1">
+                        <a href="javascript:;" nz-button nzType="link" nzDanger (click)="remove(item.id)"><i nz-icon
+                                                                                                             nzType="delete"
+                                                                                                             nzTheme="outline"></i></a>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+            <div class = "totalPrice p-4">
+                <div nz-row>
+
+                    <div nz-col nzXs="18" nzSm="18" nzMd="18" nzLg="18" nzXl="18">
+                        <h4 class="font-weight-bold mb-0">{{totalPrice}} {{data.BucketList[0].saleInfo.retailPrice.currencyCode}}</h4>
+                    </div>
+                    <div nz-col nzXs="6" nzSm="6" nzMd="6" nzLg="6" nzXl="6" class="text-right">
+                        <button nz-button nzType="primary">Proceed Payment</button>
+                    </div>
+                </div>
+
+            </div>
+        </ng-template>
+    </div>
+</div>

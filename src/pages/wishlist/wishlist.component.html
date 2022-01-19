@@ -1,1 +1,39 @@
-<p>wishlist works!</p>
+<div>
+    <a href="javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Engineering'}"><i nz-icon
+                                                                                                 nzType="arrow-left"
+                                                                                                 nzTheme="outline"></i></a>
+    <div class="mt-5">
+        <h3 class="font-weight-bold">- Wishlist</h3>
+    </div>
+    <div class="mt-5" *ngIf="wishlist$ | async as data">
+        <div *ngIf = "data.Wishlist.length === 0; else showData" class = "text-center">
+            Wishlist is <span class="font-weight-bold">Empty</span> <i nz-icon nzType="meh" class = "ml-2 icon" nzTheme="outline"></i>
+        </div>
+        <ng-template #showData>
+            <div *ngFor="let item of data.Wishlist">
+                <div nz-row>
+                    <div nz-col nzXs="2" nzSm="2" nzMd="2" nzLg="2" nzXl="2">
+                        <img [src]="item.volumeInfo.imageLinks.smallThumbnail"/>
+                    </div>
+                    <div nz-col nzXs="21" nzSm="21" nzMd="21" nzLg="21" nzXl="21">
+                        <div class="ml-3">
+                            <h4>{{item.volumeInfo.title}}</h4>
+                            <p class="overflow-hidden text-nowrap">{{item.volumeInfo.authors}}</p>
+                            <div class="mb-3">
+                                <div class="type" *ngIf="item.volumeInfo.categories">
+                                    {{item.volumeInfo.categories}}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div nz-col nzXs="1" nzSm="1" nzMd="1" nzLg="1" nzXl="1">
+                        <a href="javascript:;" nz-button nzType="link" nzDanger (click)="remove(item.id)"><i nz-icon
+                                                                                                             nzType="delete"
+                                                                                                             nzTheme="outline"></i></a>
+                    </div>
+                </div>
+                <hr/>
+            </div>
+        </ng-template>
+    </div>
+</div>

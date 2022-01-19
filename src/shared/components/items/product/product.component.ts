@@ -68,12 +68,12 @@ export class ProductComponent implements OnInit, OnDestroy {
     }
 
     addProductToWishlist(): void {
-        this.storeBucket$.dispatch(WishlistActions.AddingWishlistAction({
+        this.storeWishlist$.dispatch(WishlistActions.AddingWishlistAction({
             payload: this.data
         }));
     }
     removeProductFromWishlist(): void {
-        this.storeBucket$.dispatch(WishlistActions.RemovingWishlistAction({
+        this.storeWishlist$.dispatch(WishlistActions.RemovingWishlistAction({
             id: this.data.id
         }));
     }

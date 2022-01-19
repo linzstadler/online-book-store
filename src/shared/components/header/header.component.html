@@ -4,7 +4,7 @@
         <li>
             <div *ngIf="countBucket$ | async as count">
                 <nz-badge [nzCount]="count.BucketList.length" [nzOverflowCount]="99">
-                    <a href="javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+                    <a href="javascript:;" [routerLink]="['/bucket']"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
                 </nz-badge>
             </div>
 
@@ -12,7 +12,7 @@
         <li>
             <div *ngIf="countWishlist$ | async as count">
                 <nz-badge [nzCount]="count.Wishlist.length" [nzOverflowCount]="99">
-                    <a href="javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+                    <a href="javascript:;" [routerLink]="['/wishlist']"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
                 </nz-badge>
             </div>
         </li>

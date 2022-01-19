@@ -1,0 +1,17 @@
+@import "src/assets/color/palette";
+.type {
+  padding: .2rem .8rem;
+  background-color: $primary-100;
+  border-radius: 1rem;
+  width: fit-content;
+  width: -moz-fit-content;
+}
+
+
+.icon {
+  font-size: 1.3rem;
+}
+.totalPrice {
+  background-color: $primary-100;
+  border-radius: 1rem;
+}

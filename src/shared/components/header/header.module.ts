@@ -7,6 +7,7 @@ import {NzPopoverModule} from "ng-zorro-antd/popover";
 import {NzBadgeModule} from "ng-zorro-antd/badge";
 import {StoreModule} from "@ngrx/store";
 import {BucketReducer} from "../../../pages/bucket/reducers/bucket.reducer";
+import {RouterModule} from "@angular/router";
 
 
 
@@ -18,6 +19,7 @@ import {BucketReducer} from "../../../pages/bucket/reducers/bucket.reducer";
         HeaderComponent
     ],
     imports: [
+        RouterModule,
         CommonModule,
         NzIconModule,
         NzDropDownModule,
