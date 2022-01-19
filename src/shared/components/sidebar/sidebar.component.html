@@ -2,7 +2,18 @@
     <a [routerLink]="['/home']" class="logo d-inline-block mt-4"><img src = "./assets/media/images/book-store-logo.png" class="w-100"/></a>
     <div class="categoryArea mt-5">
         <h5 class = "font-weight-bold mb-3">Category</h5>
-        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Engineering'}" class="active">Engineering</a>
-        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Poetry'}">Poetry</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Engineering'}" [routerLinkActive]="['active']">Engineering</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Poetry'}" [routerLinkActive]="['active']">Poetry</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Fiction'}" [routerLinkActive]="['active']">Fiction</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Art'}" [routerLinkActive]="['active']">Art</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Fantasy'}" [routerLinkActive]="['active']">Fantasy</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Romance'}" [routerLinkActive]="['active']">Romance</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Business'}" [routerLinkActive]="['active']">Business</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Food'}" [routerLinkActive]="['active']">Food</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Health'}" [routerLinkActive]="['active']">Health</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Science'}" [routerLinkActive]="['active']">Science</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Sports'}" [routerLinkActive]="['active']">Sports</a>
+        <a href = "javascript:;" [routerLink]="['/home']" [queryParams]="{category: 'Travel'}" [routerLinkActive]="['active']">Travel</a>
+
     </div>
 </div>

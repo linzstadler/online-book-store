@@ -1,5 +1,5 @@
 import {Component, HostListener, OnInit} from '@angular/core';
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Router} from "@angular/router";
 import {ProductService} from "./services/product.service";
 
 import {TotalProductsModel} from "./models/total-products.model";
@@ -31,13 +31,21 @@ export class HomeComponent implements OnInit {
     private pageSize = 0;
 
     constructor(
-        private router: ActivatedRoute,
+        private router: Router,
+        private activeRouter: ActivatedRoute,
         private productService: ProductService
     ) {
     }
 
     ngOnInit(): void {
-        this.router.queryParams.subscribe(res => {
+        this.activeRouter.queryParams.subscribe(res => {
+            console.log(res)
+            if(!res['category']) {
+                this.router.navigate(
+                    ['/home'],
+                    { queryParams: { category: 'Engineering' } }
+                );
+            }
             this.category = res['category']
             this.products.totalItems = 0;
             this.products.items = [];
