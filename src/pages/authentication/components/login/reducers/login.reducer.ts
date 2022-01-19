@@ -12,6 +12,7 @@ const reducer = createReducer(
     return {...state, isLoading: true};
   }),
   on(LoginActions.SuccessLoginAction, (state: LoginState, {payload}) => {
+    console.log(payload)
     return {...state, UserData: payload, isLoading: false};
   }),
   on(LoginActions.FailedLoginAction, (state: LoginState, error: Error) => {

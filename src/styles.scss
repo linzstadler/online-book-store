@@ -16,22 +16,6 @@ body {
   line-height: 1.15;
 }
 
-// primary buttons
-//.btn-primary {
-//  color: $light;
-//  border-color: $primary;
-//  background: $primary;
-//  border-radius: 1rem;
-//  box-shadow: 0 2px 0 rgba(0,0,0,.045);
-//}
-//
-//.btn-primary-outline {
-//  color: $primary;
-//  border-color: $primary;
-//  background: transparent;
-//  border-radius: 1rem;
-//  box-shadow: 0 2px 0 rgba(0,0,0,.045);
-//}
 
 // set bg color when home layout is active
 .homeBody {
@@ -40,7 +24,7 @@ body {
 
 // set bg color when authentication layout is active
 .authBody {
-  background-color: $primary-100;
+  background-color: $light;
 }
 .avatarContentTemplate {
   width: 200px;

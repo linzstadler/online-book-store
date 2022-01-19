@@ -39,12 +39,14 @@
             </div>
             <div class = "totalPrice p-4">
                 <div nz-row>
-
                     <div nz-col nzXs="18" nzSm="18" nzMd="18" nzLg="18" nzXl="18">
-                        <h4 class="font-weight-bold mb-0">{{totalPrice}} {{data.BucketList[0].saleInfo.retailPrice.currencyCode}}</h4>
+                        <h4 class="font-weight-bold mb-0">{{totalPrice | number : '.2-2'}} {{data.BucketList[0].saleInfo.retailPrice.currencyCode}}</h4>
                     </div>
                     <div nz-col nzXs="6" nzSm="6" nzMd="6" nzLg="6" nzXl="6" class="text-right">
-                        <button nz-button nzType="primary">Proceed Payment</button>
+                        <button nz-button nzType="primary" (click) = "initializePayment()" *ngIf="!paymentToken">Proceed Payment</button>
+                        <div *ngIf = "paymentToken">
+                            transaction successfully done: {{this.paymentToken}}
+                        </div>
                     </div>
                 </div>
 

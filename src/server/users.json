@@ -4,7 +4,7 @@
       "id": 1,
       "first_name": "Aoife",
       "last_name": "Kramer",
-      "avatar": "",
+      "avatar": "https://az360.school/public/files/users/full/b52e290c_free-profile-photo-whatsapp-4.png",
       "email": "demo@gmail.com",
       "password": "123456"
     },
@@ -15,27 +15,6 @@
       "avatar": "",
       "email": "eva@gmail.com",
       "password": "123456"
-    },
-    {
-      "first_name": "asdasd",
-      "last_name": "dsfsdfsd",
-      "email": "demaaao@gmail.com",
-      "password": "123456",
-      "id": 3
-    },
-    {
-      "first_name": "sasda",
-      "last_name": "dfsdfs",
-      "email": "asda@sad.com",
-      "password": "dsadasd",
-      "id": 4
-    },
-    {
-      "first_name": "asdasda",
-      "last_name": "sdfsdfs",
-      "email": "adasa@dasd.com",
-      "password": "asdasdasd",
-      "id": 5
     }
   ]
 }

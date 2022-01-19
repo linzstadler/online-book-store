@@ -8,6 +8,8 @@ import {NzBadgeModule} from "ng-zorro-antd/badge";
 import {StoreModule} from "@ngrx/store";
 import {BucketReducer} from "../../../pages/bucket/reducers/bucket.reducer";
 import {RouterModule} from "@angular/router";
+import {LoginReducer} from "../../../pages/authentication/components/login/reducers/login.reducer";
+import {WishlistReducer} from "../../../pages/wishlist/reducers/wishlist.reducer";
 
 
 
@@ -26,6 +28,8 @@ import {RouterModule} from "@angular/router";
         NzPopoverModule,
         NzBadgeModule,
         StoreModule.forFeature('bucket', BucketReducer),
+        StoreModule.forFeature('wishlist', WishlistReducer),
+        StoreModule.forFeature('user', LoginReducer),
     ]
 })
 export class HeaderModule { }

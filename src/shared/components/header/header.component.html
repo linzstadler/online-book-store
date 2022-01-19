@@ -17,26 +17,30 @@
             </div>
         </li>
         <li class="mr-0">
-            <a href="javascript:;" class="d-inline-block"
-               nz-popover
-               nzPopoverPlacement="bottomRight"
-               nzPopoverTitle=""
-               [(nzPopoverVisible)]="visible"
-               (nzPopoverVisibleChange)="change($event)"
-               nzPopoverTrigger="click"
-               [nzPopoverOverlayClassName]="'avatarContentTemplate'"
-               [nzPopoverContent]="contentTemplate">
-                <img src="https://az360.school/public/files/users/full/b52e290c_free-profile-photo-whatsapp-4.png"
-                     class="avatar"/>
-            </a>
 
-            <ng-template #contentTemplate>
-                <p>
-                    Linz Stadler
-                </p>
-                <hr/>
-                <a href="javascript:;">Logout</a>
-            </ng-template>
+            <div *ngIf="user$ | async as user">
+                <a href="javascript:;" class="d-inline-block"
+                   nz-popover
+                   nzPopoverPlacement="bottomRight"
+                   nzPopoverTitle=""
+                   [(nzPopoverVisible)]="visible"
+                   (nzPopoverVisibleChange)="change($event)"
+                   nzPopoverTrigger="click"
+                   [nzPopoverOverlayClassName]="'avatarContentTemplate'"
+                   [nzPopoverContent]="contentTemplate">
+                    <img [src]="user.UserData.avatar ? user.UserData.avatar : 'https://miro.medium.com/max/720/1*W35QUSvGpcLuxPo3SRTH4w.png'"
+                         class="avatar"/>
+                </a>
+
+                <ng-template #contentTemplate>
+                    <p>
+                        Welcome, {{user.UserData.first_name}} {{user.UserData.last_name}}
+                    </p>
+                    <hr/>
+                    <a href="javascript:;" (click)="logout()">Logout</a>
+                </ng-template>
+            </div>
+
 
         </li>
     </ul>
