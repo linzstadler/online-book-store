@@ -2,15 +2,19 @@
     <ul>
 
         <li>
-            <nz-badge [nzCount]="5" [nzOverflowCount]="99">
-                <a href="javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
-            </nz-badge>
+            <div *ngIf="countBucket$ | async as count">
+                <nz-badge [nzCount]="count.BucketList.length" [nzOverflowCount]="99">
+                    <a href="javascript:;"><i nz-icon nzType="shopping-cart" nzTheme="outline"></i></a>
+                </nz-badge>
+            </div>
+
         </li>
         <li>
-            <nz-badge [nzCount]="5" [nzOverflowCount]="99">
-                <a href="javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
-            </nz-badge>
-
+            <div *ngIf="countWishlist$ | async as count">
+                <nz-badge [nzCount]="count.Wishlist.length" [nzOverflowCount]="99">
+                    <a href="javascript:;"><i nz-icon nzType="heart" nzTheme="outline"></i></a>
+                </nz-badge>
+            </div>
         </li>
         <li class="mr-0">
             <a href="javascript:;" class="d-inline-block"

@@ -7,9 +7,7 @@ import {NzPopoverModule} from "ng-zorro-antd/popover";
 import {NzIconModule} from "ng-zorro-antd/icon";
 import {StoreModule} from "@ngrx/store";
 import {BucketReducer} from "../../../../pages/bucket/reducers/bucket.reducer";
-import {EffectsModule} from "@ngrx/effects";
-import {BucketEffect} from "../../../../pages/bucket/effects/bucket.effect";
-
+import {WishlistReducer} from "../../../../pages/wishlist/reducers/wishlist.reducer";
 
 
 @NgModule({
@@ -26,7 +24,7 @@ import {BucketEffect} from "../../../../pages/bucket/effects/bucket.effect";
         NzPopoverModule,
         NzIconModule,
         StoreModule.forFeature('bucket', BucketReducer),
-        EffectsModule.forFeature([BucketEffect]),
+        StoreModule.forFeature('wishlist', WishlistReducer)
     ]
 })
 export class ProductModule { }

@@ -5,10 +5,11 @@
                 class="w-100"/></div>
         <div>
             <div class="px-3">
-                <h5 class="overflow-hidden text-nowrap" nz-popover nzPopoverTitle="" [nzPopoverContent]="data.volumeInfo.title">{{data.volumeInfo.title}}</h5>
+                <h5 class="overflow-hidden text-nowrap" nz-popover nzPopoverTitle=""
+                    [nzPopoverContent]="data.volumeInfo.title">{{data.volumeInfo.title}}</h5>
                 <p class="overflow-hidden text-nowrap">{{data.volumeInfo.authors}}</p>
-                <div class = "mb-3">
-                    <div class="type" *ngIf = "data.volumeInfo.categories">
+                <div class="mb-3">
+                    <div class="type" *ngIf="data.volumeInfo.categories">
                         {{data.volumeInfo.categories}}
                     </div>
                 </div>
@@ -18,12 +19,32 @@
                     <div *ngSwitchCase="getProductEnum().FREE">Free</div>
                     <div *ngSwitchCase="getProductEnum().FOR_SALE">
                         <h5>
-                            <i nz-icon nzType="dollar" class="d-inline-block align-middle icons" nzTheme="outline"></i> {{data.saleInfo.retailPrice.amount}} {{data.saleInfo.retailPrice.currencyCode}}
+                            <i nz-icon nzType="dollar" class="d-inline-block align-middle icons"
+                               nzTheme="outline"></i> {{data.saleInfo.retailPrice.amount}} {{data.saleInfo.retailPrice.currencyCode}}
                         </h5>
+                        <div class = "buttonsArea">
 
-                        <button nz-button class = "btn-primary-outline">Add to wish list <i nz-icon nzType="plus" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
-                        <button nz-button class = "btn-primary ml-3" *ngIf="!isAddedInBucket" (click)="addProductToBucket()">Add to card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
-                        <button nz-button class = "btn-primary ml-3" *ngIf="isAddedInBucket" (click)="addProductToBucket()">Remove from card <i nz-icon nzType="shopping-cart" nzTheme="outline" class="d-inline-block align-middle icons"></i></button>
+
+                            <button nz-button nzType="primary" *ngIf="!isAddedInBucket"
+                                    (click)="addProductToBucket()">Add to card <i nz-icon nzType="shopping-cart"
+                                                                                  nzTheme="outline"
+                                                                                  class="d-inline-block align-middle icons"></i>
+                            </button>
+                            <button nz-button nzType="primary" nzDanger *ngIf="isAddedInBucket"
+                                    (click)="removeProductFromBucket()">Remove from card
+                            </button>
+
+                            <button nz-button nzType="default" (click)="addProductToWishlist()" class="ml-3" nzShape="circle" *ngIf="!isAddedInWishlist"><i
+                                    nz-icon nzType="heart"
+                                    nzTheme="fill"
+                                    class="d-inline-block align-middle icons"></i>
+                            </button>
+                            <button nz-button nzType="primary" nzDanger *ngIf="isAddedInWishlist" class="ml-3" nzShape="circle" (click)="removeProductFromWishlist()"><i
+                                    nz-icon nzType="heart"
+                                    nzTheme="outline"
+                                    class="d-inline-block align-middle icons"></i></button>
+
+                        </div>
                     </div>
                 </div>
             </div>

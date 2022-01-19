@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Store} from "@ngrx/store";
+import BucketState from "../../../pages/bucket/states/bucket.state";
+import {Observable} from "rxjs";
+import WishlistState from "../../../pages/wishlist/states/wishlist.state";
 
 @Component({
   selector: 'app-header',
@@ -7,10 +11,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   visible: boolean = false;
-
-  constructor() { }
+  countBucket$: Observable<BucketState>;
+  countWishlist$: Observable<WishlistState>;
+  constructor(
+      private storeBucket$: Store<{ bucket: BucketState }>,
+      private storeWishlist$: Store<{ wishlist: WishlistState }>
+  ) {
+    this.countBucket$ = this.storeBucket$.select('bucket');
+    this.countWishlist$ = this.storeWishlist$.select('wishlist');
+  }
 
   ngOnInit(): void {
+
   }
 
 

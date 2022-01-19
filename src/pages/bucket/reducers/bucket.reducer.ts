@@ -8,11 +8,16 @@ const initialState = initializeState();
 
 const reducer = createReducer(
     initialState,
-    on(BucketActions.AddingBucketAction, (state: BucketState) => {
-        return {...state};
-    }),
-    on(BucketActions.SuccessAddingBucketAction, (state: BucketState, {payload}) => {
+    on(BucketActions.AddingBucketAction, (state: BucketState, {payload}) => {
         return {...state, BucketList: [...state.BucketList, payload]};
+    }),
+    on(BucketActions.RemovingBucketAction, (state: BucketState, {id}) => {
+        return {
+            BucketList: [
+                ...state.BucketList.filter(item => item.id !== id)
+            ]
+        }
+
     })
 );
 

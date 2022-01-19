@@ -5,6 +5,8 @@ import {NzIconModule} from "ng-zorro-antd/icon";
 import {NzDropDownModule} from "ng-zorro-antd/dropdown";
 import {NzPopoverModule} from "ng-zorro-antd/popover";
 import {NzBadgeModule} from "ng-zorro-antd/badge";
+import {StoreModule} from "@ngrx/store";
+import {BucketReducer} from "../../../pages/bucket/reducers/bucket.reducer";
 
 
 
@@ -20,7 +22,8 @@ import {NzBadgeModule} from "ng-zorro-antd/badge";
         NzIconModule,
         NzDropDownModule,
         NzPopoverModule,
-        NzBadgeModule
+        NzBadgeModule,
+        StoreModule.forFeature('bucket', BucketReducer),
     ]
 })
 export class HeaderModule { }
