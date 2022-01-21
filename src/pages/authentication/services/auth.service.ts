@@ -14,7 +14,6 @@ export class AuthService {
     }
 
     login(email: string, password: string) {
-        console.log('email', email)
         return this.http.get<[UserModel]>(`${this.endpoint}?email=${email}&password=${password}`)
             .pipe(map(user => {
                 // this.tokenService.setToken(user)

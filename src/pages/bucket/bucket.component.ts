@@ -26,7 +26,7 @@ export class BucketComponent implements OnInit {
             this.totalPrice = 0;
 
             data.BucketList.map(item => {
-                console.log(parseFloat(item.saleInfo.retailPrice.amount))
+
                 this.totalPrice += parseFloat(item.saleInfo.retailPrice.amount);
             })
         })
